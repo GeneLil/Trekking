@@ -1,0 +1,25 @@
+{
+  "name": "Trekking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {
+    "typescript": "^3.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "tsc -w main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeneLil/Trekking.git"
+  },
+  "keywords": [],
+  "author": "Gene Lilik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GeneLil/Trekking/issues"
+  },
+  "homepage": "https://github.com/GeneLil/Trekking#readme"
+}
