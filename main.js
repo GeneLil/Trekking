@@ -6,7 +6,7 @@ const currency = "\u20AC"
 
 const renderCard = () => {
     const container = document.getElementById("main")
-    const card = document.createElement("section")
+    const card = document.createElement("div")
     card.innerHTML = `
     <div class="card">
         <div class='cardHeader'>
