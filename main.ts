@@ -6,32 +6,6 @@ interface IProduct {
     currency: string
 }
 
-const tShirt: IProduct = {
-    colors: ["rgb(42, 96, 179)", "rgb(252, 229, 52)", "rgb(83, 83, 83)"],
-    type: "T-Shirt",
-    productImage: "./img/tshirt.jpg",
-    price: "5.00",
-    currency: "\u20AC"
-}
-
-const backPack: IProduct = {
-    colors: ["rgb(83, 83, 83)"],
-    type: "Backpack",
-    productImage: "./img/backpack.jpg",
-    price: "58.00",
-    currency: "\u20AC"
-}
-
-const hoodie: IProduct = {
-    colors: ["rgb(140, 140, 140)", "rgb(42, 96, 179)"],
-    type: "Backpack",
-    productImage: "./img/hoodie.jpg",
-    price: "120.00",
-    currency: "\u20AC"
-}
-
-const products = [tShirt, backPack, hoodie]
-
 const renderCard = (product: IProduct) => {
     const container = document.getElementById("main")
     const card = document.createElement("div")
@@ -55,6 +29,20 @@ const renderCard = (product: IProduct) => {
     container.appendChild(card)
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    products.map(product => renderCard(product))
+const getProducts = (): void => {
+    const productsQuery = new XMLHttpRequest()
+    productsQuery.open("GET", "products.json", true)
+    productsQuery.send()
+
+    productsQuery.onreadystatechange = () => {
+        if (productsQuery.readyState !== 4) {
+            return
+        }
+        const products: IProduct[] = JSON.parse(productsQuery.responseText)
+        products.map(renderCard)
+    }
+}
+
+document.addEventListener("DOMContentLoaded",  () => {
+    getProducts()
 })
