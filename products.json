@@ -18,7 +18,7 @@
   {
     "id": "2",
     "colors": ["rgb(140, 140, 140)", "rgb(42, 96, 179)"],
-    "type": "Backpack",
+    "type": "Hoodie",
     "productImage": "./img/hoodie.jpg",
     "price": "120.00",
     "currency": "\u20AC"
@@ -42,7 +42,7 @@
   {
     "id": "5",
     "colors": ["rgb(140, 140, 140)", "rgb(42, 96, 179)"],
-    "type": "Backpack",
+    "type": "Hoodie",
     "productImage": "./img/hoodie.jpg",
     "price": "120.00",
     "currency": "\u20AC"
@@ -66,7 +66,7 @@
   {
     "id": "8",
     "colors": ["rgb(140, 140, 140)"],
-    "type": "Backpack",
+    "type": "T-Shirt",
     "productImage": "./img/tshirt.jpg",
     "price": "144.00",
     "currency": "\u20AC"
@@ -74,7 +74,7 @@
   {
     "id": "9",
     "colors": ["rgb(83, 83, 83)"],
-    "type": "Backpack",
+    "type": "Hoodie",
     "productImage": "./img/hoodie.jpg",
     "price": "58.00",
     "currency": "\u20AC"
@@ -82,7 +82,7 @@
   {
     "id": "10",
     "colors": ["rgb(140, 140, 140)"],
-    "type": "Backpack",
+    "type": "T-Shirt",
     "productImage": "./img/tshirt.jpg",
     "price": "144.00",
     "currency": "\u20AC"

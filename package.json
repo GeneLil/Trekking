@@ -10,7 +10,7 @@
     "http-server": "^0.11.1"
   },
   "scripts": {
-    "dev": "tsc -w main.ts",
+    "dev": "tsc -w",
     "start": "http-server -с-1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

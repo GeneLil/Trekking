@@ -1,0 +1,31 @@
+.counter-block {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    padding: 0 64px;
+    width: 100%;
+}
+.counter-block .numbers {
+    color: rgb(162,150,118);
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+}
+.counter-block .arrows {
+    align-items: center;
+    display: flex;
+    margin: 8px -8px 0 0;
+}
+.counter-block .counter-arrow {
+    background: url("../icons/arrow.svg") center no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    width: 20px;
+}
+.counter-block .counter-arrow.left {
+    transform: rotate(90deg);
+}
+.counter-block .counter-arrow.right {
+    transform: rotate(-90deg);
+}
