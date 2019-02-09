@@ -8,112 +8,158 @@ interface IProduct {
     currency: string
 }
 
-const renderCard = (product: IProduct) => {
-    const card = document.createElement("div")
-    const cardsWrapper = document.querySelector(".cards-container")
-    card.classList.add("card")
-    card.innerHTML = `      
-        <div class='cardHeader'>
-            <div class='dropDown'>Size
-                <span class='arrow'/>
+class Card {
+
+    public $el = document.createElement('div')
+
+    constructor(public $root: Element, product?: IProduct) {
+
+        this.$el.classList.add('card')
+
+        if (product) this.render(product)
+
+        this.$root.appendChild(this.$el)
+
+    }
+
+    public render(product: IProduct) {
+
+        this.$el.innerHTML = `      
+            <div class='cardHeader'>
+                <div class='dropDown'>Size
+                    <span class='arrow'/>
+                </div>
+                <div class='colors'>
+                    ${product.colors.map(color => `<span class='color' style='background-color:${color}'></span>`).join('')}
+                </div>
             </div>
-            <div class='colors'>${product.colors.map(color => 
-                `<span class='color' style='background-color:${color}'></span>`).join("")}
+            <div class="cardBody">
+                <img src=${product.productImage} />
             </div>
-        </div>
-        <div class="cardBody">
-            <img src=${product.productImage} />
-        </div>
-        <div class="cardFooter">
-            <span>${product.type}</span>
-            <span class="price">${product.price + product.currency}</span>
-        </div>
-       `
-    if (cardsWrapper) {
-        cardsWrapper.appendChild(card)
+            <div class="cardFooter">
+                <span>${product.type}</span>
+                <span class="price">${product.price}${product.currency}</span>
+            </div>
+        `
+
     }
+
 }
 
-const getProducts = () => new Promise((resolve, reject) => {
-        const productsQuery = new XMLHttpRequest()
-        productsQuery.open("GET", "products.json", true)
-        productsQuery.send()
-        productsQuery.onreadystatechange = () => {
-            if (productsQuery.readyState !== 4) {
-                return
-            }
-            if (productsQuery.status !== 200) {
-                reject(productsQuery.statusText)
-            } else {
-                resolve(productsQuery.responseText)
-            }
-        }
-    })
+const getProducts = () => new Promise<string>((resolve, reject) => {
 
-const renderCategorySelectionBlock = () => {
-    const wrapper = document.createElement("div")
-    wrapper.classList.add("categorySelectionWrapper")
-    wrapper.innerHTML = `
-        <div class="checkboxes">          
-            <input id="menCategory" type="checkbox" />
-            <label for="menCategory">T-Shirt</label>           
-            <input id="womenCategory" type="checkbox" />
-            <label for="womenCategory">Backpack</label>
-            <input id="childCategory" type="checkbox" />
-            <label for="childCategory">Hoodie</label>
-        </div>
-        <button class="categories-button">See all products</button>
-    `
-    if (mainContainer) {
-        mainContainer.appendChild(wrapper)
+    const productsRequest = new XMLHttpRequest
+
+    productsRequest.open('GET', 'products.json', true)
+
+    productsRequest.send()
+
+    productsRequest.onreadystatechange = () => {
+
+        if (productsRequest.readyState !== 4) { return }
+
+        if (productsRequest.status !== 200) reject(productsRequest.statusText)
+
+        else resolve(productsRequest.responseText)
+
     }
+
+})
+
+
+class Category {
+
+    public $el = document.createElement('div')
+
+    public counter = new Counter(this.$el)
+
+    public cards = new CardsList(this.$el)
+
+    constructor(public $root: Element) {
+
+        this.$el.classList.add('category-block')
+
+        this.render()
+
+        this.$root.appendChild(this.$el)
+
+    }
+
+    public render() {
+
+        this.$el.innerHTML = `
+            <div class="category-header">
+                <span>T-Shirt</span>
+                <hr class="category-divider" />
+            </div>
+        `
+
+        this.$el.appendChild(this.counter.$el)
+
+        this.$el.appendChild(this.cards.$el)
+
+    }
+
 }
 
-const renderCategoryBlock = () => {
-    const wrapper = document.createElement("div")
-    wrapper.classList.add("category-block")
-    wrapper.innerHTML = `
-        <span>T-Shirt</span>
-        <hr class="category-divider" />
-    `
-    if (mainContainer) {
-        mainContainer.appendChild(wrapper)
+class Counter {
+
+    public $el = document.createElement('div')
+
+    constructor(public $root: Element) {
+
+        this.$el.classList.add('counter-block')
+
+        this.render()
+
+        this.$root.appendChild(this.$el)
+
     }
+
+    public render() {
+
+        this.$el.innerHTML = `
+            <div class="numbers">1 / 5</div>
+            <div class="arrows">
+                <span class="counter-arrow left"></span>
+                <span class="counter-arrow right"></span>
+            </div>
+        `
+
+    }
+
 }
 
-const renderCardsContainer = () => {
-    const wrapper = document.createElement("div")
-    wrapper.classList.add("cards-container")
-    if (mainContainer) {
-        mainContainer.appendChild(wrapper)
+class CardsList {
+
+    public $el = document.createElement('div')
+
+    constructor(public $root: Element) {
+
+        this.$el.classList.add('cards-container')
+
+        this.$root.appendChild(this.$el)
+
     }
+
 }
 
-const renderCounter = () => {
-    const wrapper = document.createElement("div")
-    wrapper.classList.add("counter-block")
-    wrapper.innerHTML = `
-        <div class="numbers">1 / 5</div>
-        <div class="arrows">
-            <span class="counter-arrow left"></span>
-            <span class="counter-arrow right"></span>
-        </div>
-    `
-    if (mainContainer) {
-        mainContainer.appendChild(wrapper)
-    }
-}
+document.addEventListener('DOMContentLoaded', async () => {
 
-document.addEventListener("DOMContentLoaded",  () => {
-    mainContainer = document.getElementById("main")
+    const $main = document.querySelector('main')
 
-    renderCategorySelectionBlock()
-    renderCategoryBlock()
-    renderCounter()
-    renderCardsContainer()
+    if (!$main) throw Error('В разметке нет элемента <main>')
 
-    getProducts().then((response: any) => {
+    const category = new Category($main)
+
+    try {
+
+        const response = await getProducts()
+        
         const products: IProduct[] = JSON.parse(response)
-        products.map(renderCard)
-    }).catch(e => console.log(e.message))
+        
+        products.map(product => new Card(category.cards.$el, product))
+    
+    } catch(error) { console.log(error.message) }
+
 })
