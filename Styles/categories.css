@@ -46,7 +46,7 @@
     transform: rotate(-45deg);
     width: 9px;
 }
-.categories-button {
+#categories-button {
     background: rgb(162,150,118);
     border: none;
     border-radius: 2px;
