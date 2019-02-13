@@ -1,0 +1,178 @@
+[
+  {
+    "id": "0",
+    "colors": ["rgb(42, 96, 179)", "rgb(252, 229, 52)", "rgb(83, 83, 83)"],
+    "type": "T-Shirt",
+    "productImage": "./img/tshirt.jpg",
+    "price": "5.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "1",
+    "colors": ["rgb(83, 83, 83)"],
+    "type": "Backpack",
+    "productImage": "./img/backpack.jpg",
+    "price": "33.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "2",
+    "colors": ["rgb(140, 140, 140)", "rgb(42, 96, 179)"],
+    "type": "Hoodie",
+    "productImage": "./img/hoodie.jpg",
+    "price": "120.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "3",
+    "colors": ["rgb(83, 83, 83)"],
+    "type": "T-Shirt",
+    "productImage": "./img/tshirt.jpg",
+    "price": "22.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "4",
+    "colors": ["rgb(83, 83, 83)"],
+    "type": "Backpack",
+    "productImage": "./img/backpack.jpg",
+    "price": "44.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "5",
+    "colors": ["rgb(140, 140, 140)", "rgb(42, 96, 179)"],
+    "type": "Hoodie",
+    "productImage": "./img/hoodie.jpg",
+    "price": "120.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "6",
+    "colors": ["rgb(83, 83, 83)"],
+    "type": "T-Shirt",
+    "productImage": "./img/tshirt.jpg",
+    "price": "22.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "7",
+    "colors": ["rgb(83, 83, 83)"],
+    "type": "Backpack",
+    "productImage": "./img/backpack.jpg",
+    "price": "55.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "8",
+    "colors": ["rgb(140, 140, 140)"],
+    "type": "T-Shirt",
+    "productImage": "./img/tshirt.jpg",
+    "price": "144.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "9",
+    "colors": ["rgb(83, 83, 83)"],
+    "type": "Hoodie",
+    "productImage": "./img/hoodie.jpg",
+    "price": "58.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "10",
+    "colors": ["rgb(140, 140, 140)"],
+    "type": "T-Shirt",
+    "productImage": "./img/tshirt.jpg",
+    "price": "144.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "11",
+    "colors": ["rgb(42, 96, 179)", "rgb(252, 229, 52)", "rgb(83, 83, 83)"],
+    "type": "T-Shirt",
+    "productImage": "./img/tshirt.jpg",
+    "price": "5.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "12",
+    "colors": ["rgb(83, 83, 83)"],
+    "type": "Backpack",
+    "productImage": "./img/backpack.jpg",
+    "price": "58.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "13",
+    "colors": ["rgb(140, 140, 140)", "rgb(42, 96, 179)"],
+    "type": "Hoodie",
+    "productImage": "./img/hoodie.jpg",
+    "price": "999.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "14",
+    "colors": ["rgb(83, 83, 83)"],
+    "type": "T-Shirt",
+    "productImage": "./img/tshirt.jpg",
+    "price": "22.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "15",
+    "colors": ["rgb(83, 83, 83)"],
+    "type": "Backpack",
+    "productImage": "./img/backpack.jpg",
+    "price": "11.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "16",
+    "colors": ["rgb(140, 140, 140)", "rgb(42, 96, 179)"],
+    "type": "Hoodie",
+    "productImage": "./img/hoodie.jpg",
+    "price": "11.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "17",
+    "colors": ["rgb(83, 83, 83)"],
+    "type": "T-Shirt",
+    "productImage": "./img/tshirt.jpg",
+    "price": "22.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "18",
+    "colors": ["rgb(83, 83, 83)"],
+    "type": "Backpack",
+    "productImage": "./img/backpack.jpg",
+    "price": "22.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "19",
+    "colors": ["rgb(140, 140, 140)"],
+    "type": "T-Shirt",
+    "productImage": "./img/tshirt.jpg",
+    "price": "144.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "20",
+    "colors": ["rgb(83, 83, 83)"],
+    "type": "Hoodie",
+    "productImage": "./img/hoodie.jpg",
+    "price": "122.00",
+    "currency": "\u20AC"
+  },
+  {
+    "id": "21",
+    "colors": ["rgb(140, 140, 140)"],
+    "type": "T-Shirt",
+    "productImage": "./img/tshirt.jpg",
+    "price": "98.00",
+    "currency": "\u20AC"
+  }
+]
